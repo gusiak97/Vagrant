@@ -1,7 +1,7 @@
 ---
 - name:
   hosts: all
-  becoe: true
+  become: true
   vars:
     git_repository: "https://github.com/gusiak97/Ansible_roles.git"
     git_branch: "main"
