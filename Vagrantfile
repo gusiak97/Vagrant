@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "playbooks/clone_roles.yml"
     ansible.extra_vars = {
-      git_repository: "https://github.com/gusiak97/Ansible_roles.git",
+      git_repository: "https://github.com/Panda-Academy-Core-2-0/Ansible_roles.git",
       git_branch: "main"
     }
   end
@@ -24,15 +24,16 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "playbooks/init.yml"
   end
 
+  
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "playbooks/infrastructure.yml"
     ansible.extra_vars = {
-      git_repository: "https://github.com/gusiak97/Infrastructure.git",
+      git_repository: "https://github.com/Panda-Academy-Core-2-0/Infrastructure",
       git_branch: "jenkins_agent"
     }
+  end
 
   if VAGRANT_COMMAND == "ssh"
     config.ssh.username = 'panda'
   end
 end
-
